@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+address {
+  margin-top: 1rem;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    border-radius: 5rem;
+    width: 40px;
+  }
+}

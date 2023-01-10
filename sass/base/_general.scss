@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: clr(neutral, 200);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}

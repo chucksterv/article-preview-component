@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+body {
+  font-family: $ff-default;
+  color: clr(primary, "blue-400");
+  font-size: $fs-regular;
+  font-weight: $fw-400;
+}
+
+h1 {
+  color: clr(primary, "blue-500");
+  font-weight: $fw-700;
+  font-size: 1rem;
+}

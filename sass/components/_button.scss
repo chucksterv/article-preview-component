@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+button {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: none;
+  transition: 150ms all;
+  img {
+    margin-inline: auto;
+  }
+}
