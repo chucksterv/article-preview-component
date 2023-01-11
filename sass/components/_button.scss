@@ -1,14 +1,34 @@
 @use "../abstracts/" as *;
 
-button {
+button.main-share-button {
+  z-index: 2;
   cursor: pointer;
   padding: 0.5rem;
+  margin-left: auto;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   border: none;
-  transition: 150ms all;
+  transition: 250ms background-color ease-in-out;
+  background-color: clr(neutral, 200);
+
   img {
     margin-inline: auto;
+  }
+
+  &:is(:focus, :hover) {
+    background-color: clr(neutral, 400);
+
+    img {
+      filter: brightness(100);
+    }
+  }
+
+  &.active {
+    background-color: clr(neutral, 400);
+
+    img {
+      filter: brightness(100);
+    }
   }
 }

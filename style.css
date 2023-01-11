@@ -103,6 +103,21 @@ h1 {
   font-size: 1rem;
 }
 
+.share-text {
+  text-transform: uppercase;
+  font-size: 0.925rem;
+  color: hsl(212deg, 23%, 69%);
+  letter-spacing: 0.2rem;
+}
+
+@media screen and (min-width: 46.875em) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  .share-text {
+    font-size: 0.8rem;
+  }
+}
 body {
   display: grid;
   place-items: center;
@@ -112,15 +127,42 @@ body {
 }
 
 .card {
+  position: relative;
   width: min(100% - 3rem, 37.5em);
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 0.825rem;
   overflow: hidden;
+  display: grid;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.card__img img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 -15px;
+     object-position: 0 -15px;
 }
 .card__content {
-  padding: 2.2rem;
+  padding: 2.2rem 2.2rem 1.2rem;
   display: grid;
   gap: 1rem;
+}
+@media screen and (min-width: 46.875em) {
+  .card {
+    width: min(100% - 8rem, 56.25em);
+    grid-template-columns: 1fr 2fr;
+  }
+  .card__img img {
+    height: 100%;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+  .card__content {
+    padding: 2.2rem 3rem 1.2rem;
+    display: grid;
+    gap: 1rem;
+  }
 }
 
 address {
@@ -130,22 +172,69 @@ address {
   align-items: center;
   gap: 1rem;
 }
-address img {
+address img.author-img {
   border-radius: 5rem;
   width: 40px;
 }
+address .author-name {
+  font-weight: 700;
+  color: hsl(217deg, 19%, 35%);
+}
+address .publish-date {
+  color: hsl(212deg, 23%, 69%);
+}
 
-button {
+button.main-share-button {
+  z-index: 2;
   cursor: pointer;
   padding: 0.5rem;
+  margin-left: auto;
   border-radius: 50%;
   width: 35px;
   height: 35px;
   border: none;
-  transition: 150ms all;
+  transition: 250ms background-color ease-in-out;
+  background-color: hsl(210deg, 46%, 95%);
 }
-button img {
+button.main-share-button img {
   margin-inline: auto;
+}
+button.main-share-button:is(:focus, :hover) {
+  background-color: hsl(212deg, 23%, 69%);
+}
+button.main-share-button:is(:focus, :hover) img {
+  filter: brightness(100);
+}
+button.main-share-button.active {
+  background-color: hsl(212deg, 23%, 69%);
+}
+button.main-share-button.active img {
+  filter: brightness(100);
+}
+
+.share-buttons {
+  margin: 0;
+  background-color: hsl(217deg, 19%, 35%);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 1.6rem 2rem;
+}
+@media screen and (min-width: 46.875em) {
+  .share-buttons {
+    border-radius: 0.5rem;
+    justify-content: space-evenly;
+    padding: 1.2rem;
+    gap: 0.7rem;
+    top: 60%;
+    left: 80%;
+    width: 175px;
+    height: 40px;
+  }
 }
 
 .clr-primary-blue-400 {
@@ -199,4 +288,8 @@ button img {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.display-none {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
